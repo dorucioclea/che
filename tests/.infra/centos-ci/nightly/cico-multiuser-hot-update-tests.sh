@@ -20,7 +20,7 @@ installCheCtl
 deployCheIntoCluster
 seleniumTestsSetup
 
-bash selenium-tests.sh \
+bash tests/legacy-e2e/che-selenium-test/selenium-tests.sh \
 --host=${CHE_ROUTE} \
  --port=80 \
  --multiuser \
