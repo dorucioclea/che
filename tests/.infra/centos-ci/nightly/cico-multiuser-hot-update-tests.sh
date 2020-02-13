@@ -6,7 +6,7 @@
 # http://www.eclipse.org/legal/epl-v10.html
 set -e
 
-etupEnvs
+setupEnvs
 installKVM
 installDependencies
 installDockerCompose
