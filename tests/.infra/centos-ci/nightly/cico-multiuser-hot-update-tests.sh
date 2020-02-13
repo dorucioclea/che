@@ -25,10 +25,12 @@ bash selenium-tests.sh \
  --port=80 \
  --multiuser \
  --threads=1 \
- --test=org.eclipse.che.selenium.hotupdate.rolling.**
+ --test=org.eclipse.che.selenium.hotupdate.rolling.** \
+ || IS_TESTS_FAILED=true
 
 echo "=========================== THIS IS POST TEST ACTIONS =============================="
-
 saveSeleniumTestResult
 getOpenshiftLogs
-archiveArtifacts "nightly-hot-update-tests.sh"
+archiveArtifacts "che-nigthly-multiuser-stable-test"
+
+if [[ "$IS_TESTS_FAILED" == "true" ]]; then exit 1; fi
